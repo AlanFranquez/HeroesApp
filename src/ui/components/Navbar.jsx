@@ -1,7 +1,20 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
+
+    // Hook de react router
+    const navigate = useNavigate();
+
+
+    const onLogout = () => {
+        navigate('/login', {
+            // Evita que la persona pueda regresar a la ventana anterior, remplaza el historial
+            replace: true
+        });
+    }
+
+
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             
@@ -52,7 +65,7 @@ export const Navbar = () => {
                         Alan
                     </span>
 
-                    <button className='nav-item nav-link btn btn-secondary'>
+                    <button className='nav-item nav-link btn btn-secondary' onClick={onLogout}>
                         Logout
                     </button>
 
