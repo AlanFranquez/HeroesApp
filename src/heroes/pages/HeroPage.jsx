@@ -14,13 +14,14 @@ export const HeroPage = () => {
   const navigate = useNavigate();
   
   const onReturn = () => {
-    if(hero.publisher === 'Marvel Comics') {
-      navigate('/marvel');
+    // if(hero.publisher === 'Marvel Comics') {
+    //   navigate('/marvel');
       
-      return;
-    } 
+    //   return;
+    // } 
 
-    navigate('/dc')
+    // navigate('/dc')
+    navigate(-1)
   }
 
 

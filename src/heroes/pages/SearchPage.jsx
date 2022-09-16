@@ -11,7 +11,7 @@ export const SearchPage = () => {
   const location = useLocation();
 
   const {q = ''} = queryString.parse(location.search);
-  console.log(q)
+  
   
   const heroes = getHeroByName(q)
 
@@ -62,13 +62,14 @@ export const SearchPage = () => {
         <div className="col-7">
           <h4>Resultados</h4>
 
-          <div className="alert alert-primary">
+          {
+            (q === '') ? <div className="alert alert-primary animate__animated animate__fadeIn">
             Buscar un heroe
-          </div>
-
-          <div className="alert alert-danger">
+          </div> : (heroes.length === 0) && <div className="alert alert-danger animate__animated animate__fadeIn">
             No sé pudó encontrar <b>{q}</b>
-          </div>
+          </div> 
+          }
+          
 
           {
             heroes.map((hero) => {
