@@ -8,11 +8,12 @@ export const Navbar = () => {
     // Hook de react router
     const navigate = useNavigate();
 
-    const {user} = useContext(AuthContext)
+    const {user, logout} = useContext(AuthContext)
     console.log(user)
     
 
     const onLogout = () => {
+        logout();
         navigate('/login', {
             // Evita que la persona pueda regresar a la ventana anterior, remplaza el historial
             replace: true
