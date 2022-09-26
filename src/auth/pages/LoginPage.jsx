@@ -10,6 +10,9 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const onLogin = () => {
+
+    login('Alan Fránquez')
+
     navigate('/marvel', {
       replace: true
     })
