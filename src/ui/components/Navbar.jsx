@@ -5,7 +5,6 @@ import { AuthContext } from '../../auth/context/AuthContext';
 
 export const Navbar = () => {
 
-    // Hook de react router
     const navigate = useNavigate();
 
     const {user, logout} = useContext(AuthContext)
