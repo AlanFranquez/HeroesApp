@@ -11,9 +11,12 @@ export const LoginPage = () => {
 
   const onLogin = () => {
 
+    // Para recordar lo que habia puesto antes de deslogearme
+    const lastPath = localStorage.getItem('lastPath') || '/';
+
     login('Alan Fránquez')
 
-    navigate('/marvel', {
+    navigate(lastPath, {
       replace: true
     })
   }
